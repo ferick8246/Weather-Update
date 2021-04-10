@@ -167,4 +167,11 @@ if (existingHistory && existingHistory.length > 0) {
     existingHistory.forEach((item) => makeRow(item));
   }
 
-  
+function getSearchVal() {
+ var searchValue = document.querySelector('#search-value').value;
+ if (searchValue) {
+ searchWeather(searchValue);
+ makeRow(searchValue);
+ document.querySelector('#search-value').value = '';
+}
+}
