@@ -147,3 +147,11 @@ var jotoQueLea = document.createElement('h3');
  getUVIndex(data.coord.lat, data.coord.lon);
 });
 }
+
+function makeRow(searchValue) {
+ var liEl = document.createElement('li');
+ liEl.classList.add('list-group-item', 'list-group-item-action');
+ liEl.id = searchValue;
+ var text = searchValue;
+ liEl.textContent = text;
+
