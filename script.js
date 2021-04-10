@@ -175,3 +175,8 @@ function getSearchVal() {
  document.querySelector('#search-value').value = '';
 }
 }
+
+document
+.querySelector('#search-button')
+.addEventListener('click', getSearchVal);
+});
