@@ -114,3 +114,25 @@ function searchWeather(searchValue) {
         }
     todayEl = document.querySelector('#today');
     todayEl.textContent = ' ';
+
+var jotoQueLea = document.createElement('h3');
+ jotoQueLea.classList.add('card-title');
+ jotoQueLea.textContent = `${
+ data.name
+ } (${new Date().toLocaleDateString()})`;
+ var cardEl = document.createElement('div');
+ cardEl.classList.add('card');
+ var windEl = document.createElement('p');
+ windEl.classList.add('card-text');
+ var humidEl = document.createElement('p');
+ humidEl.classList.add('card-text');
+ var tempEl = document.createElement('p');
+ tempEl.classList.add('card-text');
+ humidEl.textContent = `Humidity: ${data.main.humidity} %`;
+ tempEl.textContent = `Temperature: ${data.main.temp} °F`;
+ var cardBodyEl = document.createElement('div');
+ cardBodyEl.classList.add('card-body');
+ var imgEl = document.createElement('img');
+ imgEl.setAttribute('src',`http://openweathermap.org/img/w/${data.weather[0].icon}.png`);
+
+ 
