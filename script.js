@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
     if (!searchValue) {
       return;
     }
-    var endpoint = `http://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial`;
+    var endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial`;
     fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
@@ -44,7 +44,7 @@ window.addEventListener('load', function () {
     var imageElement = document.createElement('img');
     imageElement.setAttribute(
     'src',
-    `http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`);
+    `https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`);
     var p1El = document.createElement('p');
     p1El.classList.add('card-text');
     p1El.textContent = `Temp: ${data.list[i].main.temp_max} °F`;
@@ -67,7 +67,7 @@ window.addEventListener('load', function () {
 }
     
 function getUVIndex(lat, lon) {
-fetch(`http://api.openweathermap.org/data/2.5/uvi?appid=d91f911bcf2c0f925fb6535547a5ddc9&lat=${lat}&lon=${lon}`)
+fetch(`https://api.openweathermap.org/data/2.5/uvi?appid=d91f911bcf2c0f925fb6535547a5ddc9&lat=${lat}&lon=${lon}`)
  .then((res) => res.json())
  .then((data) => {
  var bodElemen = document.querySelector('.card-body');
@@ -133,7 +133,7 @@ var jotoQueLea = document.createElement('h3');
  var cardbodElemen = document.createElement('div');
  cardbodElemen.classList.add('card-body');
  var imageElement = document.createElement('img');
- imageElement.setAttribute('src',`http://openweathermap.org/img/w/${data.weather[0].icon}.png`);
+ imageElement.setAttribute('src',`https://openweathermap.org/img/w/${data.weather[0].icon}.png`);
 
  jotoQueLea.appendChild(imageElement);
  cardbodElemen.appendChild(jotoQueLea);
