@@ -135,4 +135,15 @@ var jotoQueLea = document.createElement('h3');
  var imgEl = document.createElement('img');
  imgEl.setAttribute('src',`http://openweathermap.org/img/w/${data.weather[0].icon}.png`);
 
- 
+ jotoQueLea.appendChild(imgEl);
+ cardBodyEl.appendChild(jotoQueLea);
+ cardBodyEl.appendChild(tempEl);
+ cardBodyEl.appendChild(humidEl);
+ cardBodyEl.appendChild(windEl);
+ cardEl.appendChild(cardBodyEl);
+ todayEl.appendChild(cardEl);
+
+ getForecast(searchValue);
+ getUVIndex(data.coord.lat, data.coord.lon);
+});
+}
