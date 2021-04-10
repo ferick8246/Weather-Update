@@ -24,8 +24,8 @@ window.addEventListener('load', function () {
    forecastRowEl.className = '"row"';
     for (var i = 0; i < data.list.length; i++) {
     if (data.list[i].dt_txt.indexOf('15:00:00') !== -1) {
-    var colEl = document.createElement('div');
-    colEl.classList.add('col-md-2');
+    var columElement = document.createElement('div');
+    columElement.classList.add('col-md-2');
     var cardEl = document.createElement('div');
     cardEl.classList.add('card', 'bg-primary', 'text-white');
     var windEl = document.createElement('p');
@@ -52,7 +52,7 @@ window.addEventListener('load', function () {
     p2El.classList.add('card-text');
     p2El.textContent = `Humidity: ${data.list[i].main.humidity}%`;
 
-    colEl.appendChild(cardEl);
+    columElement.appendChild(cardEl);
      bodyEl.appendChild(jotoQueLea);
      bodyEl.appendChild(imgEl);
      bodyEl.appendChild(windEl);
@@ -60,7 +60,7 @@ window.addEventListener('load', function () {
      bodyEl.appendChild(p1El);
      bodyEl.appendChild(p2El);
      cardEl.appendChild(bodyEl);
-    forecastEl.appendChild(colEl);
+    forecastEl.appendChild(columElemen);
     }
     }
     });
