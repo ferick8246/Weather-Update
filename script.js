@@ -155,3 +155,16 @@ function makeRow(searchValue) {
  var text = searchValue;
  liEl.textContent = text;
 
+ liEl.addEventListener('click', (e) => {
+  if (e.target.tagName === 'LI') {
+  searchWeather(e.target.textContent);
+}
+});
+document.getElementById('history').appendChild(liEl);
+}
+
+if (existingHistory && existingHistory.length > 0) {
+    existingHistory.forEach((item) => makeRow(item));
+  }
+
+  
