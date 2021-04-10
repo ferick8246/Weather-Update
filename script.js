@@ -25,9 +25,9 @@ window.addEventListener('load', function () {
     for (var i = 0; i < data.list.length; i++) {
     if (data.list[i].dt_txt.indexOf('15:00:00') !== -1) {
     var columElement = document.createElement('div');
-    columElement.classList.add('col-md-2');
+    columElement.classList.add('col-md-4');
     var cardEl = document.createElement('div');
-    cardEl.classList.add('card', 'bg-primary', 'text-white');
+    cardEl.classList.add('card', 'bg-info', 'text-white');
     var windElement = document.createElement('p');
     windElement.classList.add('card-text');
     windElement.textContent = `Wind Speed: ${data.list[i].wind.speed} MPH`;
