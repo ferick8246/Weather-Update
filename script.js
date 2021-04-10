@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
     if (!searchValue) {
       return;
     }
-    var endpoint = (`https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial`);
+    var endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial`;
     fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
@@ -67,7 +67,7 @@ window.addEventListener('load', function () {
 }
     
 function getUVIndex(lat, lon) {
-fetch(`https://api.openweathermap.org/data/2.5/uvi?appid=d91f911bcf2c0f925fb6535547a5ddc9&lat=${lat}&lon=${lon}`)
+fetch`https://api.openweathermap.org/data/2.5/uvi?appid=d91f911bcf2c0f925fb6535547a5ddc9&lat=${lat}&lon=${lon}`
  .then((res) => res.json())
  .then((data) => {
  var bodElemen = document.querySelector('.card-body');
@@ -105,7 +105,7 @@ uvEl.appendChild(buttonEl);
 };
 
 function searchWeather(searchValue) {
- var endpoint = (`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial`);
+ var endpoint =`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial`;
  fetch(endpoint)
  .then((res) => res.json())
  .then((data) => {
