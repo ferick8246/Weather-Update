@@ -16,9 +16,12 @@ window.addEventListener('load', function () {
     fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
-        // Select our forecast element and add a header to it
+        // Select our forecast element
         var forecastEl = document.querySelector('#forecast');
         forecastEl.innerHTML = '<h4 class="mt-3">5-Day Forecast:</h4>';
+
+        forecastRowEl = document.createElement('div');
+        forecastRowEl.className = '"row"';
     
 
     
