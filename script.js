@@ -66,5 +66,41 @@ window.addEventListener('load', function () {
     });
 }
     
+function getUVIndex(lat, lon) {
+fetch(`http://api.openweathermap.org/data/2.5/uvi?appid=d91f911bcf2c0f925fb6535547a5ddc9&lat=${lat}&lon=${lon}`)
+ .then((res) => res.json())
+ .then((data) => {
+ var bodyEl = document.querySelector('.card-body');
+ var uvEl = document.createElement('p');
+ uvEl.id = 'uv';
+ uvEl.textContent = 'UV Index: ';
+ var buttonEl = document.createElement('span');
+ buttonEl.classList.add('btn', 'btn-sm');
+ buttonEl.innerHTML = data.value;
 
+ switch (data.value) {
+    case data.value < 3:
+    buttonEl.classList.add('btn-success');
+    break;
+    case data.value < 7:
+    buttonEl.classList.add('btn-warning');
+    break;
+    default:
+    buttonEl.classList.add('btn-danger');
+    }
+bodyEl.appendChild(uvEl);
+uvEl.appendChild(buttonEl);
+});
+}
+
+  const handleHistory = (term) => {
+    if (existingHistory && existingHistory.length > 0) {
+     var existingEntries = JSON.parse(localStorage.getItem('history'));
+     var newHistory = [...existingEntries, term];
+     localStorage.setItem('history', JSON.stringify(newHistory));
+    } else {
+      historyItems.push(term);
+      localStorage.setItem('history', JSON.stringify(historyItems));
+    }
+};
     
