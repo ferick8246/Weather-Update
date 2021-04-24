@@ -54,6 +54,7 @@ window.addEventListener('load', function () {
 
     if(data.main.temp_max < 60){
       cardEl.setAttribute ("onclick", "window.location='https://www.amazon.com/Amazon-Essentials-Crewneck-Sweater-Oatmeal/dp/B079RPN91H'");
+      cardEl.style.cursor="pointer";
     }
     var p2El = document.createElement('p');
     p2El.classList.add('card-text');
