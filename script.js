@@ -104,7 +104,7 @@ window.addEventListener('load', function () {
   };
 
   function searchWeather(searchValue) {
-    var endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial`;
+    var endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=d8b800298124f5e24d721e57a581b607&units=imperial`;
     fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
