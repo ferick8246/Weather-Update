@@ -51,6 +51,10 @@ window.addEventListener('load', function () {
     var p1El = document.createElement('p');
     p1El.classList.add('card-text');
     p1El.textContent = `Temp: ${data.main.temp_max} °F`;
+
+    if(data.main.temp_max < 60){
+      cardEl.setAttribute ("onclick", "window.location='https://www.amazon.com/Amazon-Essentials-Crewneck-Sweater-Oatmeal/dp/B079RPN91H'");
+    }
     var p2El = document.createElement('p');
     p2El.classList.add('card-text');
     p2El.textContent = `Humidity: ${data.main.humidity}%`;
