@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
     if (!searchValue) {
       return;
     }
-    var endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial`;
+    var endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${searchValue}&appid=d8b800298124f5e24d721e57a581b607&units=imperial`;
     fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
@@ -23,7 +23,7 @@ window.addEventListener('load', function () {
    forecastRowEl = document.createElement('div');
    forecastRowEl.className = '"row"';
     for (var i = 0; i < data.list.length; i++) {
-    if (data.list[i].dt_txt.indexOf('15:00:00') !== -1) {
+    if (data.list[i].dt_txt.includes('15:00:00')) {
     var columElement = document.createElement('div');
     columElement.classList.add('col-md-4');
     var cardEl = document.createElement('div');
